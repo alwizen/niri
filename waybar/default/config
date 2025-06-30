@@ -1,0 +1,105 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 37,
+    "width": "90%",
+    "margin-top": 10,
+    "margin-left": 30,
+    "margin-right": 30,
+    "spacing": 4,
+    "border-radius": 100,
+    
+    "modules-left": ["clock", "niri/window"],
+    "modules-center": ["custom/sep-left", "niri/workspaces", "custom/sep-right"],
+    "modules-right": ["pulseaudio", "backlight", "bluetooth", "battery", "network", "tray", "custom/power"],
+
+    "niri/workspaces": {
+    "format": "{icon}",
+	"format-icons": {
+		"active": "󰮯",
+		"default": ""
+	},
+        "disable-scroll": false,
+        "all-outputs": true
+    },
+
+    "niri/window": {
+        "format": " {title}",
+        "max-length": 35
+    },
+
+    "clock": {
+        "format": " {:%a, %d %b %H:%M}",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5,
+        "tooltip": false
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "  {essid} {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 disconnected",
+        "tooltip": false,
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "custom/sep-left": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/sep-right": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout"
+    }
+}
