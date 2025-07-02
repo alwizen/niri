@@ -5,21 +5,18 @@
   font-family: "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
   font-size: 13px;
   font-weight: bold;
-  /* font-family: "Hack Nerd Font", "Symbols Nerd Font", monospace; */
-  /* font-weight: 500;/ */
+  font-family: "Hack Nerd Font", "Symbols Nerd Font", monospace;
+  /* font-weight: 500; */
   min-height: 0;
 }
 
-/* Waybar utama */
+/* Waybar utama - transparan sepenuhnya */
 window#waybar {
   background: transparent;
-  border-radius: 8px;
   border: none;
+  color: #c6c8d1;
   box-shadow: none;
-  margin: 0;
-  padding: 0;
 }
-
 
 /* Tooltip styling */
 tooltip {
@@ -79,9 +76,9 @@ button:hover {
 }
 
 #workspaces button {
-  padding: 3px 1px; 
+  padding: 3px 5px; /* Dikurangi dari 4px 6px */
   margin: 1px;
-  border-radius: 6px; 
+  border-radius: 6px; /* Dikurangi dari 12px */
   color: #c6c8d1;
   background: transparent;
   font-size: 12px; /* Dikurangi dari 14px */
@@ -101,7 +98,7 @@ button:hover {
 /* Niri Window title */
 #window {
   color: #b4befe;
-  font-weight: 100;
+  font-weight: 400;
   margin: 0 4px; /* Dikurangi dari 8px */
   font-style: italic;
   background: rgba(22, 25, 37, 0.8);
